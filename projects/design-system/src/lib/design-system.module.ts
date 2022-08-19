@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import ButtonComponent from './components/atoms/button/button.component'
+import { CommonModule } from '@angular/common';
+
+// Components Library
+import ButtonComponent from './components/atoms/button/button.component';
 
 
 @NgModule({
@@ -7,6 +10,7 @@ import ButtonComponent from './components/atoms/button/button.component'
     ButtonComponent
   ],
   imports: [
+    CommonModule
   ],
   exports: [
     ButtonComponent

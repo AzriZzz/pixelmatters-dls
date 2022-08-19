@@ -4,7 +4,7 @@ import Button from '../projects/design-system/src/lib/components/atoms/button/bu
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Buttons/Button',
+  title: 'Atom/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {
