@@ -42,7 +42,7 @@
         "build": {
           "options": {
             "tsConfig": "tsconfig.json",
-            "styles": [],
+            "styles": ["projects/design-system/src/styles.scss"],
             "scripts": []
           }
         }
