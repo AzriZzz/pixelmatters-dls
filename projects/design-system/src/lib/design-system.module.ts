@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import ButtonComponent from './components/button/button.component'
+import ButtonComponent from './components/atoms/button/button.component'
 
 
 @NgModule({
