@@ -11,3 +11,7 @@ const Template: Story<PxlButtonComponent> = (args: PxlButtonComponent) => ({
 });
 
 export const Primary = Template.bind({});
+Primary.args = {
+  primary: true,
+  label: 'Button',
+};

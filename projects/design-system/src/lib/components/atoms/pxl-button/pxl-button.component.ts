@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'lib-pxl-button',
@@ -7,9 +7,16 @@ import { Component } from '@angular/core';
 })
 export default class PxlButtonComponent {
 
-  constructor() { }
+  @Input() primary = false;
+  @Input() size: 'small' | 'medium' | 'large' = 'medium';
+  @Input() level: 'primary' | 'secondary' | 'tertiary' = 'primary';
+  @Input() label = 'Button';
 
-  ngOnInit(): void {
+  @Output() onClick = new EventEmitter<Event>();
+
+  public get classes(): string[] {
+    const mode = this.primary ? 'pxl-button--primary' : 'primary-button--secondary';
+    return ['pxl-button', `pxl-button--${this.size}`, mode];
   }
 
 }

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import PxlButtonComponent from './pxl-button.component';
 
-import { PxlButtonComponent } from './pxl-button.component';
 
 describe('PxlButtonComponent', () => {
   let component: PxlButtonComponent;
