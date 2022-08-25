@@ -145,18 +145,77 @@
                 }
             },
             "templateData": "<button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>"
+        },
+        {
+            "name": "PxlButtonComponent",
+            "id": "component-PxlButtonComponent-1d252e051da886e970b96e425a00ff8a5dc62d92964ad0c7533a910b97ada6174ff43e94cafe4905c10b93fa361154d2f12fe1154d7e12310aad917ddebb5b90",
+            "file": "projects/design-system/src/lib/components/atoms/pxl-button/pxl-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-pxl-button",
+            "styleUrls": [
+                "./pxl-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./pxl-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'lib-pxl-button',\n  templateUrl: './pxl-button.component.html',\n  styleUrls: ['./pxl-button.component.scss']\n})\nexport default class PxlButtonComponent {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./pxl-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "templateData": "<p>pxl-button works!</p>\n"
         }
     ],
     "modules": [
         {
             "name": "DesignSystemModule",
-            "id": "module-DesignSystemModule-fdbcc5e971f80abd4e1132912c9db7c030517657ce385a3873e20689203c5fe41d86847fea8ac39defc276e1f814a7d46cabfdb6caeb7bd8ca0547eb1f82f3f1",
+            "id": "module-DesignSystemModule-2617fad935ff0b1436150d7c608cb1953a6140411de9a9981c5288ecd61673eade84317e7b54e9676cab81e0b51fe5c93f6ac9cc66e7b37a841c2bb5148c75db",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/design-system/src/lib/design-system.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n// Components Library\r\nimport ButtonComponent from './components/atoms/button/button.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [\r\n    ButtonComponent\r\n  ]\r\n})\r\nexport class DesignSystemModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n// Components Library\r\nimport ButtonComponent from './components/atoms/button/button.component';\r\nimport PxlButtonComponent from './components/atoms/pxl-button/pxl-button.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonComponent,\r\n    PxlButtonComponent    \r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [\r\n    ButtonComponent,\r\n    PxlButtonComponent\r\n  ]\r\n})\r\nexport class DesignSystemModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -167,6 +226,9 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "PxlButtonComponent"
                         }
                     ]
                 },
@@ -179,6 +241,9 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "PxlButtonComponent"
                         }
                     ]
                 },
@@ -209,7 +274,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/atoms/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -219,7 +284,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/atoms/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -238,7 +303,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/atoms/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -248,7 +313,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/atoms/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -258,7 +323,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/atoms/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Button>",
@@ -290,12 +355,12 @@
                     "type": "literal type"
                 }
             ],
-            "stories/Button.stories.ts": [
+            "stories/atoms/Button.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/atoms/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -305,7 +370,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/atoms/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -315,7 +380,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/atoms/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -325,7 +390,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/atoms/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -335,7 +400,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
+                    "file": "stories/atoms/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Button>",
@@ -349,7 +414,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 9,
+        "count": 8,
         "status": "low",
         "files": [
             {
@@ -360,6 +425,15 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "projects/design-system/src/lib/components/atoms/pxl-button/pxl-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PxlButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
             },
             {
                 "filePath": "projects/design-system/src/test.ts",
@@ -382,7 +456,16 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/atoms/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -392,7 +475,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/atoms/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -402,7 +485,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/atoms/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -412,7 +495,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/atoms/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -422,20 +505,11 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/atoms/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/User.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "User",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
