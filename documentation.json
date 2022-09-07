@@ -148,7 +148,7 @@
         },
         {
             "name": "PxlButtonComponent",
-            "id": "component-PxlButtonComponent-1d252e051da886e970b96e425a00ff8a5dc62d92964ad0c7533a910b97ada6174ff43e94cafe4905c10b93fa361154d2f12fe1154d7e12310aad917ddebb5b90",
+            "id": "component-PxlButtonComponent-b846204075dd48e44cd586f2cea399f4e5690e81a5f6aeb32facab588af3ae6fdb76b06a2edc36d5abe7ba0ef779e36af23bdfa81785f466d30026ee4ca0e4b8",
             "file": "projects/design-system/src/lib/components/atoms/pxl-button/pxl-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -164,21 +164,56 @@
                 "./pxl-button.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
+            "inputsClass": [
                 {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
+                    "name": "label",
+                    "defaultValue": "'Button'",
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "level",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "\"primary\" | \"secondary\" | \"tertiary\"",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
                 }
             ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -186,24 +221,27 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'lib-pxl-button',\n  templateUrl: './pxl-button.component.html',\n  styleUrls: ['./pxl-button.component.scss']\n})\nexport default class PxlButtonComponent {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-pxl-button',\n  templateUrl: './pxl-button.component.html',\n  styleUrls: ['./pxl-button.component.scss']\n})\nexport default class PxlButtonComponent {\n\n  @Input() primary = false;\n  @Input() size: 'small' | 'medium' | 'large' = 'medium';\n  @Input() level: 'primary' | 'secondary' | 'tertiary' = 'primary';\n  @Input() label = 'Button';\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'pxl-button--primary' : 'primary-button--secondary';\n    return ['pxl-button', `pxl-button--${this.size}`, mode];\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".pxl-button {\r\n  &--primary {\r\n    color: blue;\r\n  }\r\n\r\n}",
                     "styleUrl": "./pxl-button.component.scss"
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 17
+                    }
+                }
             },
-            "templateData": "<p>pxl-button works!</p>\n"
+            "templateData": "<button type=\"button\" (click)=\"onClick.emit($event)\" [ngClass]=\"classes\">\n  {{ label }}\n</button>\n"
         }
     ],
     "modules": [
@@ -274,7 +312,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/atoms/Button.stories.ts",
+                "file": "stories/atoms/DemoButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -285,6 +323,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/atoms/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/atoms/DemoButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -303,7 +351,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/atoms/Button.stories.ts",
+                "file": "stories/atoms/DemoButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -313,7 +361,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/atoms/Button.stories.ts",
+                "file": "stories/atoms/DemoButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -324,6 +372,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/atoms/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PxlButtonComponent>",
+                "defaultValue": "(args: PxlButtonComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/atoms/DemoButton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Button>",
@@ -355,12 +413,12 @@
                     "type": "literal type"
                 }
             ],
-            "stories/atoms/Button.stories.ts": [
+            "stories/atoms/DemoButton.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/atoms/Button.stories.ts",
+                    "file": "stories/atoms/DemoButton.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -370,7 +428,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/atoms/Button.stories.ts",
+                    "file": "stories/atoms/DemoButton.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -380,7 +438,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/atoms/Button.stories.ts",
+                    "file": "stories/atoms/DemoButton.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -388,6 +446,28 @@
                 },
                 {
                     "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/atoms/DemoButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/atoms/DemoButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "stories/atoms/Button.stories.ts": [
+                {
+                    "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/atoms/Button.stories.ts",
@@ -403,8 +483,8 @@
                     "file": "stories/atoms/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\r\n  props: args,\r\n})"
+                    "type": "Story<PxlButtonComponent>",
+                    "defaultValue": "(args: PxlButtonComponent) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -414,7 +494,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 8,
+        "count": 6,
         "status": "low",
         "files": [
             {
@@ -432,7 +512,7 @@
                 "linktype": "component",
                 "name": "PxlButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -469,16 +549,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/atoms/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -489,13 +559,43 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/atoms/DemoButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/atoms/DemoButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/atoms/DemoButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Secondary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/atoms/Button.stories.ts",
+                "filePath": "stories/atoms/DemoButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -505,7 +605,7 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/atoms/Button.stories.ts",
+                "filePath": "stories/atoms/DemoButton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

@@ -1,6 +1,32 @@
 .pxl-button {
+  width: 80px;
+  height: 36px;
+  border-radius: 16px;
+  transition: ease-in-out 400ms;
+
   &--primary {
-    color: blue;
+    color: white;
+    background-color: #556AEB;
+    border: transparent;
+
+  }
+
+  &:hover{ 
+    background-color: #1D2F99;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: #0C1A66;
+  }
+
+  &:focus {
+    background-color: #556AEB;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    color: white;
   }
 
 }
